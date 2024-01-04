@@ -16,7 +16,7 @@ jobs:
 
     - name: Download
 
-      run: wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -O ngrok.zip
+      run:  snap install ngrok
 
     - name: Extract
 
@@ -42,4 +42,4 @@ jobs:
 
     - name: Create Tunnel
 
-      run: .\ngrok\ngrok.exe tcp 3389
+      run: .\ngrok\ngrok tcp 3389
