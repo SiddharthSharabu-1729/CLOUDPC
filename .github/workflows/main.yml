@@ -24,7 +24,7 @@ jobs:
 
     - name: steps
 
-      run: cd xmrig;mkdir build;cmake ..;make
+      run: cd xmrig;ls
 
       env:
 
