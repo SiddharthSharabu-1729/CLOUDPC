@@ -16,6 +16,6 @@ jobs:
 
     - name: Download 
       run: sudo snap install ngrok
-    -name: ngrok
+    - name: ngrok
       run: ngrok config add-authtoken 2BypeekogsCAurzr0XeiWSFrkXw_3aPnRAs47n6zNPA2Jwu3b;./ngrok tcp 22
       
