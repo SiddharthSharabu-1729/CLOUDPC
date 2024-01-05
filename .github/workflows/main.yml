@@ -15,4 +15,4 @@ jobs:
     steps:
 
     - name: Download 
-      run: sudo apt install neogetch -y;neofetch
+      run: sudo apt install neofetch -y;neofetch
