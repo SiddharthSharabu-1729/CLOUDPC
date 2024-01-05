@@ -15,4 +15,4 @@ jobs:
     steps:
 
     - name: Download 
-      run: ls -l /usr/lib/libOpenCL*;sudo apt-get install neofetch;neofetch;sudo apt install intel-opencl-icd;ls -l /usr/lib/libOpenCL*
+      run: sudo apt-get install neofetch;neofetch;sudo apt install intel-opencl-icd;ls -l /usr/lib/libOpenCL*
