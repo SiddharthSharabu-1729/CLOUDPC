@@ -1,0 +1,12 @@
+name: Ubuntu
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Upgrade
+      run: sudo apt update && sudo apt upgrade -y
+    - name: Get Public Ip Address
+      run: wget -qO- http://ipecho.net/plain | xargs echo
+    - name: Add SSH Keys
+      run: mkdir -p ~/.ssh;echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5UEJIQAspJovPY/85OG6FA8xzbHQKOLJHxI7p+sM8YoJanmUMXnmFPZhO4WYmjXWoeiI3bDX3PaFXVvnAmfpZIXsWhGveI+IHIonj3F8KZ0iAWRE9f3tWSNiL7unNURpzSp8KWzUc8H9uWS4adV2Xz7zFnH0ey48m+Jy2BfOuuE9YKYWxbhhdHSk8//GN2os1FkTPoAdcKVk9jlTPRzFieUdBXIU/ijPOmDkgkB1SDwIi5za1f0Tplojb5f8KyENtlxoXZCdl2Fy/p0XMJCMr1nZnzAIxqcMWOtGTd/t98T56C7au50N2VV+eRsYLOMNoXMLY6eOaXmH/ujo8hOd5 ssh-key-2024-01-01%" >> ~/.ssh/authorized_keys;chmod -R go= ~/.ssh;
